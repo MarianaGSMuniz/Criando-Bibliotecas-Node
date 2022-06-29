@@ -1,3 +1,5 @@
 const pegaArquivo = require('../index');
 
-test('deve ser uma função')
+test('deve ser uma função', () => {
+    expect(typeof pegaArquivo).toBe()
+})
