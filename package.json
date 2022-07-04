@@ -12,8 +12,9 @@
     "license": "ISC",
     "keywords": [],
     "dependencies": {
-        "chalk": "^5.0.1",
+        "chalk": "4.0",
         "module": "^1.0.0",
+        "mysql": "^2.18.1",
         "node-fetch": "^3.2.6",
         "type": "^2.6.0"
     }
