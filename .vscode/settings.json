@@ -1,3 +1,11 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cSpell.words": [
+        "Arquivo",
+        "arquivos",
+        "deve",
+        "função",
+        "pega",
+        "texto"
+    ]
 }
