@@ -9,7 +9,7 @@ function extraiLinks(texto) {
     const linksExtraidos = texto.match(regex);
     console.log(linksExtraidos)
 }
-return arrayResultados.lengt === 0 ? 'não há links' : arrayResultados;
+//return arrayResultados.length === 0 ? 'não há links' : arrayResultados;
 
 extraiLinks(texto);
 
@@ -17,7 +17,7 @@ function trataErro(erro) {
     throw new Error(chalk.red(erro.code, 'não há arquivos'));
 
 }
-
+ // async/await
 async function pegaArquivo(caminhoDoArquivo) {
     const encoding = 'utf-8';
     try {
@@ -27,25 +27,25 @@ async function pegaArquivo(caminhoDoArquivo) {
         trataErro(erro);
     }
 }
+ //promise
+//function pegaArquivo(caminhoDoArquivo) {
+  //  const encoding = 'utf-8';
+    //fs.promises
+      //  .readFile(caminhoDoArquivo, encoding)
+        //.then((texto) => console.log(texto))
+       // .catch((erro) => trataErro(erro))
 
-function pegaArquivo(caminhoDoArquivo) {
-    const encoding = 'utf-8';
-    fs.promises
-        .readFile(caminhoDoArquivo, encoding)
-        .then((texto) => console.log(texto))
-        .catch((erro) => trataErro(erro))
 
+//}
+//callback
+//function pegaArquivo(caminhoDoArquivo) {
+  //  const encoding = 'utf-8'
+    //fs.readFile(caminhoDoArquivo, encoding, (erro, texto) => {
+      //  if (err) {
+        //    trataErro(erro);
+        //}
 
-}
-
-function pegaArquivo(caminhoDoArquivo) {
-    const encoding = 'utf-8'
-    fs.readFile(caminhoDoArquivo, encoding, (erro, texto) => {
-        if (err) {
-            trataErro(erro);
-        }
-
-    })
-}
+    //})
+//}
 
 module.exports = pegaArquivo;
