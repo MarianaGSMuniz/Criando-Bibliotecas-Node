@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest ./test",
         "cli": "node cli.js ./arquivos/texto1.md",
         "start": "node --experimental-modules src/index.mjs "
     },
@@ -17,5 +17,8 @@
         "mysql": "^2.18.1",
         "node-fetch": "^3.2.6",
         "type": "^2.6.0"
+    },
+    "devDependencies": {
+        "jest": "^28.1.2"
     }
 }
