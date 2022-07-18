@@ -6,7 +6,7 @@ const texto = 'São geralmente recuperados a partir de um objeto [FileList](http
 
 function extraiLinks(texto) {
     const regex = /\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;
-    const linksExtraidos = texto.match(regex);
+    const linksExtraidos = regex.exec(texto);
     console.log(linksExtraidos)
 }
 //return arrayResultados.length === 0 ? 'não há links' : arrayResultados;
@@ -21,10 +21,10 @@ function trataErro(erro) {
 async function pegaArquivo(caminhoDoArquivo) {
     const encoding = 'utf-8';
     try {
-        const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
-        return extraiLinks(texto);
+     const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
+     return extraiLinks(texto);
     } catch (erro) {
-        trataErro(erro);
+      trataErro(erro);
     }
 }
  //promise
