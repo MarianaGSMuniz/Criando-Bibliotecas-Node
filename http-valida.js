@@ -9,8 +9,6 @@ async function checaStatus (arrayLinks){
 } return arrayStatus;
 
 function geraLink (arrayLinks){
-  // objeto ->[valor]
-    object.values (objeto);
 return arrayLinks.map (objetoLink =>Object.values(objetoLink).join());
 }
 
@@ -18,6 +16,10 @@ async function validaURLs(arrayLinks) {
     const Links = geraLink  (arrayLinks);
     const statusLinks = await checaStatus (Links);
     return statusLinks;
+    const resultados = arrayLinks.map ((objeto, indice) => {
+        objeto,
+        status; statusLinks[indice];
+    }  );
 }
 
 module.exports = validaURLs;
