@@ -1,12 +1,24 @@
 const fetch= require ('node-fetch');
 
-async function checaStatus (arrayLinks){
-  const arrayStatus= await  Promise.all (arrayLinks.map (async url =>{
-    const res = await fetch (url)
-    return res.status;
+function manejaErro(erro){
+throw new Error (erro.message);
+}
 
+
+async function checaStatus (arrayLinks){
+  try
+  {const arrayStatus= await  Promise
+    .all (arrayLinks.map (async url =>{
+     const res = await fetch (url)
+    return res.status;
   }))
-} return arrayStatus;
+      }
+      catch (erro) {
+        manejaErro(erro);
+      }
+      return arrayStatus;
+  } 
+  module.exports = validaURLs;
 
 function geraLink (arrayLinks){
 return arrayLinks.map (objetoLink =>Object.values(objetoLink).join());
